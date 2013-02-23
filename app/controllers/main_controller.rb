@@ -4,8 +4,7 @@ class MainController < ApplicationController
 
   def hello
 
-  	@name = current_user.email
-  	@message = "You are #{@current_user.email}"
+  	@message = "Welcome to zion"
 
   	respond_to do |format|
   		format.html 
