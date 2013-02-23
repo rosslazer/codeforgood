@@ -2,12 +2,17 @@
 
 <p>
   <b>Name:</b>
-  <%= @location.name %>
+  <%= @location.name %><br>
+  <b>Location:</b>
+  <%= @location.location %><br>
+  <b>Active:</b>
+  <% if @location.active == true %>
+  <%= @location.active %>
+  <% end %>
+<br>
+  <b>Description:</b>
+  <%= @location.description %>
 </p>
-
-<!--DO THE REST FOR ALL ATTRIBUTES -->
-<% end %>
-
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
+gem 'therubyracer'
+
+gem 'twitter-bootstrap-rails', :git => 'https://github.com/seyhunak/twitter-bootstrap-rails.git'
+
 gem 'airbrake'
 gem 'bourbon'
 gem 'high_voltage'
@@ -13,8 +17,6 @@ gem 'rails', '>= 3.2.11'
 gem 'simple_form'
 gem 'thin'
 gem 'devise'
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-
 
 
 group :assets do
