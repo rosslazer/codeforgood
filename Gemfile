@@ -11,7 +11,6 @@ gem 'psych'
 gem 'rack-timeout'
 gem 'rails', '>= 3.2.11'
 gem 'simple_form'
-gem 'strong_parameters'
 gem 'thin'
 gem 'devise'
 
@@ -35,7 +34,6 @@ end
 
 group :test do
   gem 'bourne', require: false
-  gem 'capybara-webkit', '>= 0.14.1'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'launchy'
