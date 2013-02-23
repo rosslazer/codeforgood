@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20130223181651) do
 
   create_table "tools", :force => true do |t|
     t.string   "donor"
+    t.string   "name"
     t.string   "donor_email"
     t.string   "qr_code"
     t.string   "category"

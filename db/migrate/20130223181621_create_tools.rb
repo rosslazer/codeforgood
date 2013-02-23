@@ -2,6 +2,7 @@ class CreateTools < ActiveRecord::Migration
   def change
     create_table :tools do |t|
     	t.string :donor
+      t.string :name
     	t.string :donor_email
     	t.string :qr_code
     	t.string :category
