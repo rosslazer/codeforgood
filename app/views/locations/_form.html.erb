@@ -8,12 +8,13 @@ background-color: white;
 </style>
 
 <%= simple_form_for @location do |f| %>
-  <%= f.input :name, :label => 'Location Name' %>
+  <%= f.input :name, :label => 'Operation Name' %>
+  <%= f.input :location %>
+  <%= f.label  :active %>
+  <%= f.check_box :active %><br>
+  <%= f.label :description %>
+  <%= f.text_area :description, :rows => "5" %><br>
  
-  <!-- DO FOR REST -->
-
-
-
   <%= f.button :submit %>
 <% end %>
 
