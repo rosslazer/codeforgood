@@ -5,7 +5,7 @@ class AddStuffToUsers < ActiveRecord::Migration
   		t.string :last_name
   		t.text :address
   		t.string :branch
-  		t.string :role
+  		t.boolean :role, :default => false
   		t.text :bio
   		t.integer :request_id
 
