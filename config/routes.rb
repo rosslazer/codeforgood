@@ -9,5 +9,6 @@ Cfg::Application.routes.draw do
   devise_for :users
 
   get "main/hello"
+  get "getuser/index"
 
 end
