@@ -1,9 +1,11 @@
 class MainController < ApplicationController
 
 	before_filter :authenticate_user!
-	
+
   def hello
-  	@message = "Hello World!"
+
+  	@name = current_user.email
+  	@message = "You are #{@current_user.email}"
 
   	respond_to do |format|
   		format.html 
