@@ -13,6 +13,8 @@ gem 'rails', '>= 3.2.11'
 gem 'simple_form'
 gem 'thin'
 gem 'devise'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
 
 
 group :assets do
