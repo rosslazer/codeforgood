@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(:version => 20130223181651) do
     t.datetime "return_date"
     t.integer  "location_id"
     t.text     "broken_description"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.integer  "user_id"
+    t.boolean  "checked_out",        :default => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
   create_table "users", :force => true do |t|

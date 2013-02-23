@@ -10,6 +10,8 @@ class CreateTools < ActiveRecord::Migration
     	t.datetime :return_date
     	t.integer :location_id
     	t.text :broken_description
+      t.integer :user_id
+      t.boolean :checked_out, :default => false
 
       t.timestamps
     end

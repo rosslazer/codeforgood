@@ -1,14 +1,20 @@
 class LocationController < ApplicationController
   def index
-    @Location.all
+    @locations = Location.all
 
     respond_to do |format|
       format.html  index.html.erb
-      format.json { render :json => @events }
+      format.json { render :json => @locations }
     end
   end
 
   def show
+    @location = Location.find(params[:id])
+
+    respond_to do |format|
+      format.html  index.html.erb
+      format.json { render :json => @location }
+    end
   end
 
   def new
