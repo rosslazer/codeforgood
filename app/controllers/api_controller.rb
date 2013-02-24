@@ -16,6 +16,10 @@ class ApiController < ApplicationController
 	def new_item        
  	
 		@name = params["name"]
+		@desc = params["broken_description"]
+		@category = params["category"]
+		@checked_out = false
+
  		@tool = Tool.new(:name => @name)
 			respond_to do |format|
 		      if @tool.save
@@ -27,6 +31,8 @@ class ApiController < ApplicationController
 
 
 	end
+
+    
 
 
 
