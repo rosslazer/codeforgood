@@ -13,9 +13,10 @@ class ApiController < ApplicationController
 	end
 
 
-	def new_item
-		@tool = Tool.new
-		@tool = Tool.new(params[params])
+	def new_item        
+ 	
+		@name = params["name"]
+ 		@tool = Tool.new(:name => @name)
 			respond_to do |format|
 		      if @tool.save
 		        format.json { render :json => @tool, :status => :created, :tool => @tool }
