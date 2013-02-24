@@ -9,7 +9,11 @@
   <%= @location.active %>
 <br>
   <b>Description:</b>
-  <%= @location.description %>
+  <%= @location.description %><br><br>
+  <b>Tools:</b><br>
+  <% @tools.each do |tool| %>
+  <%= tool.name %><br>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |

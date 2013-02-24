@@ -13,7 +13,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
-    @tools = Tool.where(:location_id== [:id])
+    @tools = Tool.where(location_id: @location.id)
 
     respond_to do |format|
       format.html  #show.html.erb
