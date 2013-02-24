@@ -27,4 +27,5 @@ Cfg::Application.routes.draw do
   get "main/hello"
   get "getuser/index"
 
+root :to => "locations#index"
 end
