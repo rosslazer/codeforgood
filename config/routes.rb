@@ -10,7 +10,7 @@ Cfg::Application.routes.draw do
 
   get '/api/tools_by_location/:id', to: 'api#tools_by_location'
 
-  get "api/new_item"
+  match 'api/new_item' => 'api#new_item', :via => :post
 
   resources :locations
 
