@@ -1,25 +1,2 @@
 <h1>All Items</h1>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Location</th>
-    <th>Working?</th>
-    <th>Return Date</th>
-  </tr>
-
-<% @tools.each do |tool| %>
-  <tr>
-    <td><%= tool.name %></td>
-    <td><%= tool.location_id %>
-    <td><%= tool.working %></td>
-    <td><%= tool.return_date %>
-
-    <td><%= link_to 'Show', location %></td>
-    <td><%= link_to 'Edit', edit_location_path(location) %></td>
-    <td><%= link_to 'Destroy', location, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
+<%= render 'form' %>
