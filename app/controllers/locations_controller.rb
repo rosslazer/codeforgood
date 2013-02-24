@@ -51,7 +51,7 @@ class LocationsController < ApplicationController
   end
 
   def update
-    @locaiton = Location.find(params[:id])
+    @location = Location.find(params[:id])
 
     respond_to do |format|
       if @location.update_attributes(params[:location])
