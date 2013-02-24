@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Some Locations
+Location.create([{name: 'Hurricane Bob', location: 'West Palm Beach, Florida', active: true,
+                description: 'Hurricane Bob relief effort'},
+                {name: 'Hurricane Jeff', location: 'Buffalo, New York', active: true,
+                description: 'Hurricane Bob relief effort'}])
