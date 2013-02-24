@@ -7,6 +7,9 @@ Cfg::Application.routes.draw do
 
   get "items/returnable"
 
+
+  get '/api/tools_by_location/:id', to: 'api#tools_by_location'
+
   resources :locations
 
 
