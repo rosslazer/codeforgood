@@ -11,9 +11,14 @@
   <b>Description:</b>
   <%= @location.description %><br><br>
   <b>Tools:</b><br>
+  <table width=500><tr><th>Name</th><th>Checked Out</th><th>Working</th><th>Broken Description</th><tr>
   <% @tools.each do |tool| %>
-  <%= tool.name %><br>
+  <td><%= tool.name %></td>
+  <td><%= tool.checked_out %></td>
+  <td><%= tool.working %></td>
+  <td><%= tool.broken_description %></td>
   <% end %>
+  </table>
 </p>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
