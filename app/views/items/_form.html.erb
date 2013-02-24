@@ -9,7 +9,7 @@
 <% @tools.each do |tool| %>
   <tr>
     <td><%= tool.name %></td>
-    <td><%= tool.location_id %>
+    <td><%= Location.find(tool.location_id).name %>
     <td><%= tool.working %></td>
     <td><%= tool.return_date %>
     <td><%= link_to 'Show', tool.id.to_s %></td>

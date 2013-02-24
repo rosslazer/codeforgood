@@ -19,6 +19,8 @@
   <% end %><br>
   <b>Location ID:</b>
   <%= @tools.location_id %><br>
+  <b>Location Name:</b>
+  <%= Location.find(@tools.location_id).name %><br>
   <b>Broken Description:</b>
   <%= @tools.broken_description %>
 </p>
