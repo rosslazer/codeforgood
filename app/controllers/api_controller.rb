@@ -16,11 +16,23 @@ class ApiController < ApplicationController
 	def new_item        
  	
 		@name = params["name"]
-		@desc = params["broken_description"]
+		@desc = "null"
 		@category = params["category"]
 		@checked_out = false
+		@donor = params["donor"]
+		@donor_email = params["donor_email"]
+		@location_id = params["location_id"]
+		@qr_code = params["qr_code"]
+		@return_date = params["return_date"]
+		@returnable = params["returnable"]
+		@user_id = params["user_id"]
+		@working = true
 
- 		@tool = Tool.new(:name => @name)
+		@tool = Tool.new(:name => @name, :broken_description => @desc,
+		 			:category => @category, :checked_out => @checked_out, :donor => @donor,
+		 			:donor_email => @donor_email, :location_id => @location_id, :qr_code => @qr_code,
+		 			:return_date => @return_date, :returnable => @returnable, :user_id => @user_id,
+		 			:working => @working  )
 			respond_to do |format|
 		      if @tool.save
 		        format.json { render :json => @tool, :status => :created, :tool => @tool }
@@ -31,8 +43,7 @@ class ApiController < ApplicationController
 
 
 	end
-
-    
+ 
 
 
 
