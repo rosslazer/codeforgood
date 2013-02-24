@@ -4,7 +4,7 @@ class ApiController < ApplicationController
 	def tools_by_location
 
 		@id = [:id]
-		@location_tools = Tool.where(:location_id == @id)
+		@location_tools = Tool.where(:location_id == @id) && Tool.where(:checked_out == false)
 
 	    respond_to do |format|
 	      format.json { render :json => @location_tools }
@@ -14,9 +14,8 @@ class ApiController < ApplicationController
 
 
 	def new_item
-
 		@tool = Tool.new
-		@tool = Tool.new(params[:params])
+		@tool = Tool.new(params[params])
 			respond_to do |format|
 		      if @tool.save
 		        format.json { render :json => @tool, :status => :created, :tool => @tool }
@@ -27,6 +26,7 @@ class ApiController < ApplicationController
 
 
 	end
+
 
 
 
