@@ -3,6 +3,7 @@
     <th>Name</th>
     <th>Location</th>
     <th>Working?</th>
+    <th>Checked out?</th>
     <th>Return Date</th>
   </tr>
 
@@ -11,6 +12,8 @@
     <td><%= tool.name %></td>
     <td><%= Location.find(tool.location_id).name %>
     <td><%= tool.working %></td>
+        <td><%= tool.checked_out %></td>
+
     <td><%= tool.return_date %>
     <td><%= link_to 'Show', tool.id.to_s %></td>
     <td>Edit</td>
