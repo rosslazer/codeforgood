@@ -56,7 +56,31 @@ class ApiController < ApplicationController
 	  
 
 	end
+
+
+	def check_out
+	  	@id = params["id"]
+	  	@check_var = params["checked_out"]
+	  	@tool = Tool.find(@id)
+	  	respond_to do |format|
+
+	    if @tool.update_attributes(:checked_out => @check_var)
+	    	        format.json {render :json => @tool, :status => :created, :tool => @tool}
+	  	else
+	  		     format.json { render :json => @tool.errors, :status => :unprocessable_entity }
+		end
+	end
+
+
+
+	end         
  
+
+	def check_in
+
+
+	end
+
        
 
 

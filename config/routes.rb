@@ -13,6 +13,7 @@ Cfg::Application.routes.draw do
 
 
   match 'api/new_item' => 'api#new_item', :via => :post
+  match 'api/check_out' => 'api#check_out', :via => :post
 
   resources :locations
 
