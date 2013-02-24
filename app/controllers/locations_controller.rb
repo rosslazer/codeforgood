@@ -71,7 +71,7 @@ class LocationsController < ApplicationController
 
 
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to :action => 'index' }
       format.json { head :no_content }
     end
   end
