@@ -34,4 +34,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @tool = Tool.find(params[:id])
+    @tool.destroy
+
+    respond_to do |format|
+      format.html { redirect_to :action => 'all' }
+      format.json { head :no_content }
+    end
+  end
+
 end
