@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @tools.name %><br>
+  <b>Donor:</b>
+  <%= @tools.donor %><br>
+  <b>Donor Email:</b>
+  <%= @tools.donor_email %><br>
+  <b>QR Code:</b>
+  <%= @tools.qr_code %><br>
+  <b>Category:</b>
+  <%= @tools.category %><br>
+  <b>Working:</b>
+  <%= @tools.working %><br>
+  <b>Return Date:</b>
+  <% if @tools.returnable == true %>
+    <%= @tools.return_date %>
+  <% end %><br>
+  <b>Location ID:</b>
+  <%= @tools.location_id %><br>
+  <b>Broken Description:</b>
+  <%= @tools.broken_description %>
+</p>
+
+<%= link_to 'Back', items_all_path %>
