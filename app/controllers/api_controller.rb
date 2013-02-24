@@ -77,6 +77,23 @@ class ApiController < ApplicationController
  
 
 	def check_in
+		@id = params["id"]
+		@working = params["working"]
+		@check_var = params["checked_out"]
+
+		if @working == false
+			@description = param["broken_description"]
+		else
+			@description = "null"
+		end
+		@tool = Tool.find(@id)
+		if @tool.update_attributes(:checked_out => @check_var, :working => @working,
+				:broken_description => @description)
+	    	        format.json {render :json => @tool, :status => :created, :tool => @tool}
+	  	else
+	  		     format.json { render :json => @tool.errors, :status => :unprocessable_entity }
+		end
+
 
 
 	end
