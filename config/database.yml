@@ -1,7 +1,5 @@
 development: &default
   adapter: postgresql
-  username: devaccount
-  password: password
   database: cfg_dev
   encoding: utf8
   host: localhost
@@ -12,3 +10,5 @@ development: &default
 test:
   <<: *default
   database: cfg_test
+
+
