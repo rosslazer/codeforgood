@@ -4,7 +4,7 @@ class ApiController < ApplicationController
 	def tools_by_location
 
 		@id = [:id]
-		@location_tools = Tool.where(:location_id == @id) && Tool.where(:checked_out == false)
+		@location_tools = Tool.where(location_id: params[:id]) 
 
 	    respond_to do |format|
 	      format.json { render :json => @location_tools }
@@ -43,8 +43,20 @@ class ApiController < ApplicationController
 
 
 	end
- 
 
+	def qr
+     
+	@id = [:id]
+    @tools = Tool.where(:qr_code => [:id])
+
+	    respond_to do |format|
+	      format.json { render :json => @tools }
+	    end
+	  
+
+	end
+ 
+       
 
 
 

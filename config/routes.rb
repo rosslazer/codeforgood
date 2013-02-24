@@ -9,6 +9,8 @@ Cfg::Application.routes.draw do
 
 
   get '/api/tools_by_location/:id', to: 'api#tools_by_location'
+  get '/api/qr/:id', to: 'api#qr'
+
 
   match 'api/new_item' => 'api#new_item', :via => :post
 
