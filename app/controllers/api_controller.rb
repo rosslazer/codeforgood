@@ -47,7 +47,8 @@ class ApiController < ApplicationController
 	def qr
      
 	@id = [:id]
-    @tools = Tool.where(:qr_code => [:id])
+    @tools = Tool.where(qr_code: params[:id])
+
 
 	    respond_to do |format|
 	      format.json { render :json => @tools }
