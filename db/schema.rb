@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20130223181651) do
 
   create_table "tools", :force => true do |t|
     t.string   "donor"
+    t.string   "name"
     t.string   "donor_email"
     t.string   "qr_code"
     t.string   "category"
@@ -48,8 +49,8 @@ ActiveRecord::Schema.define(:version => 20130223181651) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -58,14 +59,14 @@ ActiveRecord::Schema.define(:version => 20130223181651) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "authentication_token"
     t.string   "first_name"
     t.string   "last_name"
     t.text     "address"
     t.string   "branch"
-    t.string   "role"
+    t.boolean  "role",                   :default => false
     t.text     "bio"
     t.integer  "request_id"
   end

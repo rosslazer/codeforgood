@@ -10,6 +10,8 @@ Cfg::Application.routes.draw do
 
   get '/api/tools_by_location/:id', to: 'api#tools_by_location'
 
+  get "api/new_item"
+
   resources :locations
 
 
