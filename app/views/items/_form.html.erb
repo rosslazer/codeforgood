@@ -1,22 +1,35 @@
-<table>
+<table width=600>
   <tr>
     <th>Name</th>
     <th>Location</th>
-    <th>Working?</th>
-    <th>Checked out?</th>
+    <th>Status</th>
+    <th></th>
     <th>Return Date</th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @tools.each do |tool| %>
   <tr>
     <td><%= tool.name %></td>
-    <td><%= Location.find(tool.location_id).name %>
-    <td><%= tool.working %></td>
-        <td><%= tool.checked_out %></td>
+    <td><%= Location.find(tool.location_id).name %></td>
+    <td>
+    <% if tool.working == true %>
+      Working
+    <% else %>
+      Broken
+    <% end %>
+    </td>
+    <td>
+    <% if tool.checked_out == true %>
+      Checked Out
+    <% else %>
+      In Base
+    <% end %>
+    </td>
 
     <td><%= tool.return_date %>
     <td><%= link_to 'Show', tool.id.to_s %></td>
-    <td>Edit</td>
     <td><%= link_to 'Delete', tool.id.to_s, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
   </tr>
 <% end %>
