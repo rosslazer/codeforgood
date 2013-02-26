@@ -11,11 +11,23 @@
   <b>Description:</b>
   <%= @location.description %><br><br>
   <b>Tools:</b><br>
-  <table width=500><tr><th>Name</th><th>Checked Out</th><th>Working</th><th>Broken Description</th><tr>
+  <table width=500><tr><th></th><th></th><th></th><th></th><tr>
   <% @tools.each do |tool| %>
   <td><%= tool.name %></td>
-  <td><%= tool.checked_out %></td>
-  <td><%= tool.working %></td>
+  <td>
+  <% if tool.checked_out == true %>
+    Checked Out
+  <% else %>
+    At Base
+  <% end %>
+  </td>
+  <td>
+  <% if tool.working == false %>
+    Broken
+  <% else %>
+    Working
+  <% end %>
+  </td>
   <td><%= tool.broken_description %></td>
   <% end %>
   </table>
