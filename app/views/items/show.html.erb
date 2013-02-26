@@ -3,8 +3,12 @@
 <p>
   <b>Name:</b>
   <%= @tools.name %><br>
-   <b>Checked Out?:</b>
-  <%= @tools.checked_out %><br>
+  <b>Status:</b>
+  <% if @tools.checked_out == true %>
+    Checked Out
+  <% else %>
+    At Base
+  <% end %><br>
   <b>Donor:</b>
   <%= @tools.donor %><br>
   <b>Donor Email:</b>
@@ -13,18 +17,24 @@
   <%= @tools.qr_code %><br>
   <b>Category:</b>
   <%= @tools.category %><br>
-  <b>Working:</b>
-  <%= @tools.working %><br>
-  <b>Return Date:</b>
-  <% if @tools.returnable == true %>
-    <%= @tools.return_date %>
+  <b>Working Status:</b>
+  <% if @tools.working == true%>
+    Working
+  <% else %>
+    Broken
   <% end %><br>
+  <% if @tools.returnable == true %>
+  <b>Return Date:</b>
+    <%= @tools.return_date %><br>
+  <% end %>
   <b>Location ID:</b>
   <%= @tools.location_id %><br>
   <b>Location Name:</b>
   <%= Location.find(@tools.location_id).name %><br>
-  <b>Broken Description:</b>
-  <%= @tools.broken_description %>
+  <% if @tools.working == false %>
+    <b>Broken Description:</b>
+    <%= @tools.broken_description %>
+  <% end %>
 </p>
 
 <%= link_to 'Back', items_all_path %>
